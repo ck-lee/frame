@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="727cc0a3-4899-422e-bc46-5d911858c2f8" name="Default" comment="making it work on windws">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/frame.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/api/ping.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.js" afterPath="$PROJECT_DIR$/manifest.js" />
+    <list default="true" id="727cc0a3-4899-422e-bc46-5d911858c2f8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/postman/authentication.json.postman_collection" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="frame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -107,7 +100,7 @@
       <file leaf-file-name="ping.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/api/ping.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33239436">
+            <state vertical-scroll-proportion="1.1943662">
               <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
               <folding />
             </state>
@@ -370,7 +363,13 @@
       <option name="project" value="LOCAL" />
       <updated>1429994320439</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added .idea and ping service">
+      <created>1429997299124</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1429997299124</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -402,7 +401,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="making it work on windws" />
-    <option name="LAST_COMMIT_MESSAGE" value="making it work on windws" />
+    <MESSAGE value="added .idea and ping service" />
+    <option name="LAST_COMMIT_MESSAGE" value="added .idea and ping service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -508,7 +508,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/api/ping.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33239436">
+        <state vertical-scroll-proportion="1.1943662">
           <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
           <folding />
         </state>
