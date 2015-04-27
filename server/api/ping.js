@@ -1,6 +1,7 @@
 var Joi = require('joi');
 var Hoek = require('hoek');
 var AuthPlugin = require('../auth');
+var Config = require('../../config');
 
 
 exports.register = function (server, options, next) {
@@ -14,7 +15,7 @@ exports.register = function (server, options, next) {
         config: {
             auth: {
                 strategy: 'simple',
-                scope: 'admin'
+                //scope: 'admin'
             },
             validate: {
                 query: {
@@ -27,9 +28,9 @@ exports.register = function (server, options, next) {
                     page: Joi.number().default(1)
                 }
             },
-            pre: [
-                AuthPlugin.preware.ensureAdminGroup('root')
-            ]
+            /*pre: [
+             AuthPlugin.preware.ensureAdminGroup('root')
+             ]*/
         },
         handler: function (request, reply) {
             if(!request.auth.isAuthenticated){
@@ -38,6 +39,7 @@ exports.register = function (server, options, next) {
                 var result = {};
                 result.server = request.server.info;
                 result.settings = request.server.settings;
+                result.config = Config.get('/');
                 reply(result);
             }
         }
