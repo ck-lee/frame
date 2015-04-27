@@ -8,5 +8,5 @@ RUN npm install
 ADD . /app
 CMD []
 
-EXPOSE  3000
-ENTRYPOINT npm install && NODE_ENV = ${env} forever server.js
+EXPOSE  9000
+ENTRYPOINT npm install && NODE_ENV=${env} forever server.js

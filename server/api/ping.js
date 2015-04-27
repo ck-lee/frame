@@ -14,8 +14,7 @@ exports.register = function (server, options, next) {
         path: options.basePath + '/ping',
         config: {
             auth: {
-                strategy: 'simple',
-                //scope: 'admin'
+                strategy: 'simple'
             },
             validate: {
                 query: {
@@ -27,10 +26,7 @@ exports.register = function (server, options, next) {
                     limit: Joi.number().default(20),
                     page: Joi.number().default(1)
                 }
-            },
-            /*pre: [
-             AuthPlugin.preware.ensureAdminGroup('root')
-             ]*/
+            }
         },
         handler: function (request, reply) {
             if(!request.auth.isAuthenticated){
