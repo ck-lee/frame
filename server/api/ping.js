@@ -8,13 +8,13 @@ exports.register = function (server, options, next) {
 
     options = Hoek.applyToDefaults({ basePath: '' }, options);
 
-
     server.route({
         method: 'GET',
         path: options.basePath + '/ping',
         config: {
             auth: {
                 strategy: 'simple'
+                //scope: 'admin'
             },
             validate: {
                 query: {
@@ -27,11 +27,15 @@ exports.register = function (server, options, next) {
                     page: Joi.number().default(1)
                 }
             }
+            /*pre: [
+             AuthPlugin.preware.ensureAdminGroup('root')
+             ]*/
         },
         handler: function (request, reply) {
-            if(!request.auth.isAuthenticated){
-                reply("pong");
-            }else{
+
+            if (!request.auth.isAuthenticated){
+                reply('pong');
+            }else {
                 var result = {};
                 result.server = request.server.info;
                 result.settings = request.server.settings;

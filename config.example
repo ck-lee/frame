@@ -8,57 +8,84 @@ var criteria = {
 
 var config = {
     $meta: 'This file configures the plot device.',
-    projectName: '{{projectName}}',
+    projectName: '---replace---',
     port: {
-        web: {
-            $filter: 'env',
-            test: 9000,
-            $default: 8000
-        }
+        web: 9002
     },
     authAttempts: {
         forIp: 50,
         forIpAndUser: 7
     },
+    hapiAzureSB: {
+        $filter: 'env',
+        production: {
+            url: '---replace---'
+        },
+        $default: {
+            url: '---replace---',
+            topicPath: '---replace---',
+            subscriptionPath: '---replace---'
+        }
+    },
     hapiMongoModels: {
         $filter: 'env',
         production: {
             mongodb: {
-                url: process.env.MONGOLAB_URI
+                url: '---replace---'
             },
             autoIndex: false
         },
         test: {
             mongodb: {
-                url: '{{mongodbUrl}}-test'
+                url: '---replace---'
             },
             autoIndex: true
         },
         $default: {
             mongodb: {
-                url: '{{mongodbUrl}}'
+                url: '---replace---'
             },
             autoIndex: true
         }
     },
     nodemailer: {
-        host: '{{smtpHost}}',
-        port: {{smtpPort}},
+        host: 'smtp.gmail.com',
+        port: 465,
         secure: true,
         auth: {
-            user: '{{smtpUsername}}',
-            pass: '{{smtpPassword}}'
+            user: '---replace---',
+            pass: '---replace---'
         }
     },
     system: {
         fromAddress: {
-            name: '{{projectName}}',
-            address: '{{systemEmail}}'
+            name: '---replace---',
+            address: '---replace---'
         },
         toAddress: {
-            name: '{{projectName}}',
-            address: '{{systemEmail}}'
+            name: '---replace---',
+            address: '---replace---'
         }
+    },
+    good: {
+        reporters: [
+            {
+                reporter: require('good-logentries'),
+                args: [
+                    {
+                        log: '*',
+                        request: '*',
+                        error: '*',
+                        ops: '*'
+                    },
+                    {
+                        // Any option you can pass to node-logentries.logger (except levels)
+                        token: '---replace---',
+                        secure: true
+                    }
+                ]
+            }
+        ]
     }
 };
 
